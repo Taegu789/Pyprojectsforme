@@ -6,7 +6,10 @@ df_from_excel = pd.read_excel(filePath,engine='openpyxl')
 
 df_from_excel.columns = df_from_excel.loc[4].tolist()
 
-un1 = df_from_excel.columns
+df_from_excel = df_from_excel.drop(index=list(range(0,5)))
 
-#엑셀파일의 4번째 행의 값을 칼럼으로 지정해준다.
-print(un1)
+print(df_from_excel.head())
+
+print(df_from_excel['학교명'].values)
+
+print(df_from_excel['주소'].values)
