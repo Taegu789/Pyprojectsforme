@@ -22,7 +22,7 @@ try:
             print("음성을 입력하세요.")
             audio = r.record(source, offset=1, duration=2)
         try:
-            stt = r.recognize_google(audio, language='ko-KR')
+            stt = r.recognize_google_cloud(audio, language='ko-KR',single_utterance=True)
             print("음성변환  : " + stt)
             if stt in ice:
                 speak("아이스 아메리카노를 주문하시겠습니까?")
